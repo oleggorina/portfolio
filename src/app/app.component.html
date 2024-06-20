@@ -1,0 +1,40 @@
+@defer {
+  <div class="container">
+    <div class="projects">
+      <div class="projects__items">
+        <div class="wrapper">
+          @for(project of projects; track project; let i = $index) {
+            @if(currentProject === i) {
+              <app-project [image]="project.image"></app-project>
+            }
+          }
+          <app-shadow [positionClass]="'one'"></app-shadow>
+          <app-shadow [positionClass]="'two'"></app-shadow>
+          <app-shadow [positionClass]="'three'"></app-shadow>
+          <app-shadow [positionClass]="'four'"></app-shadow>
+          <app-shadow [positionClass]="'fifth'"></app-shadow>
+        </div>
+        <div class="projects__items-indicators">
+          @for(indicator of projects; track indicator; let i = $index) {
+            <app-indicator [isActive]="currentProject === i"></app-indicator>
+          }
+        </div>
+      </div>
+      <div class="projects__content">
+        <app-content [title]="projects[currentProject].title"
+        [stack]="projects[currentProject].stack"
+        [functional]="projects[currentProject].functional"
+        [demo]="projects[currentProject].demo"
+        [code]="projects[currentProject].code"></app-content>
+      </div>
+      <div class="projects__controls">
+        <app-control (click)="prevProject()">&#10094;</app-control>
+        <app-control (click)="nextProject()">&#10095;</app-control>
+      </div>
+    </div>
+  </div>
+} @placeholder(minimum 1s) {
+  <div class="spinner">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+}

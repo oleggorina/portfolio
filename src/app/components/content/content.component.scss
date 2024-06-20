@@ -1,0 +1,63 @@
+@import '../../../scss/common';
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: $gap;
+    font-family: $font-header;
+    color: $color-light;
+    width: 100%;
+    height: 100%;
+    animation: content-animation 0.5s ease-in forwards;
+    &.animate {
+        animation: content-animation 0.5s ease-in forwards;
+    }
+
+    &__title {
+        h1 {
+            font-size: 2.5em;
+            font-weight: 500;
+        }
+    }
+
+    &__stack {
+        h2 {
+            font-weight: 400;
+            font-size: 2em;
+        }
+
+        p {
+            font-weight: 200;
+            font-size: 1.25em;
+        }
+    }
+
+    &__func {
+        h3 {
+            font-weight: 400;
+            font-size: 1.5em;
+        }
+
+        p {
+            font-weight: 200;
+            font-size: 1.25em;
+        }
+    }
+    &__btns {
+        display: flex;
+        gap: $gap;
+    }
+}
+
+@keyframes content-animation {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

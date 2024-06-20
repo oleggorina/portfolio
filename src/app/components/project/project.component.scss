@@ -1,0 +1,86 @@
+@import '../../../scss/common';
+
+.project {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    // animation: appear 1s ease;
+    @include ul-min {
+        transform: perspective(1300px) rotateY(20deg) translateZ(320px) scale(0.8);
+        animation: project-animationUL 1s ease;
+    }
+    @include xl-lg {
+        transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.6);
+        animation: project-animationXL 1s ease;
+    }
+    @include lg {
+        transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.7);
+        animation: project-animationLG 1s ease;
+    }
+    @include md {
+        transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.6);
+        animation: project-animationMD 1s ease;
+    }
+    @include sm {
+        transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.5);
+        animation: project-animationSM 1s ease;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes project-animationUL {
+    from {
+        transform: translate(0);
+    } to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(320px) scale(0.8);
+    }
+}
+
+@keyframes project-animationXL {
+    from {
+        transform: translate(0);
+    } to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.6);
+    }
+}
+
+@keyframes project-animationLG {
+    from {
+        transform: translate(0);
+    } to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.7);
+    }
+}
+
+@keyframes project-animationMD {
+    from {
+        transform: translate(0);
+    } to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.6);
+    }
+}
+
+@keyframes project-animationSM {
+    from {
+        transform: translate(0);
+    } to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.5);
+    }
+}

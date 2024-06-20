@@ -1,0 +1,23 @@
+@import '../../../scss/common';
+
+.indicator {
+    background-color: $color-light;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.15s ease-in;
+    animation: appear 0.5s ease-in forwards;
+    &.active {
+        height: 16px;
+        border-radius: 4px;
+        background-color: #ffd740;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

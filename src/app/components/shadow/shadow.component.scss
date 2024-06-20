@@ -1,0 +1,95 @@
+@import '../../../scss/common';
+
+.shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &.one {
+        z-index: -1;
+        opacity: 0.25;
+        transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.70);
+        @include xl {
+            transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.60);  
+        }
+        @include md {
+            transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.50); 
+        }
+        @include sm {
+            display: none;
+        }
+    }
+
+    &.two {
+        z-index: -2;
+        opacity: 0.20;
+        transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.70);
+        @include xl {
+            transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.60);
+        }
+        @include md {
+            transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.50); 
+        }
+        @include sm {
+            transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.40);
+        }
+    }
+
+    &.three {
+        z-index: -3;
+        opacity: 0.15;
+        transform: perspective(1300px) rotateY(20deg) translateZ(20px) scale(0.70);
+        @include xl {
+            transform: perspective(1300px) rotateY(20deg) translateZ(20px) scale(0.60);
+        }
+        @include md {
+            transform: perspective(1300px) rotateY(20deg) translateZ(20px) scale(0.50); 
+        }
+        @include sm {
+            transform: perspective(1300px) rotateY(20deg) translateZ(20px) scale(0.40); 
+        }
+    }
+
+    &.four {
+        z-index: -4;
+        opacity: 0.10;
+        transform: perspective(1300px) rotateY(20deg) translateZ(-120px) scale(0.70);
+        @include xl {
+            transform: perspective(1300px) rotateY(20deg) translateZ(-120px) scale(0.60); 
+        }
+        @include md {
+            transform: perspective(1300px) rotateY(20deg) translateZ(-120px) scale(0.50);
+        }
+        @include sm {
+            transform: perspective(1300px) rotateY(20deg) translateZ(-120px) scale(0.40);  
+        }
+    }
+
+    &.fifth {
+        z-index: -4;
+        opacity: 0.05;
+        transform: perspective(1300px) rotateY(20deg) translateZ(-220px) scale(0.70);
+        @include xl {
+            transform: perspective(1300px) rotateY(20deg) translateZ(-220px) scale(0.60); 
+        }
+        @include md {
+            transform: perspective(1300px) rotateY(20deg) translateZ(-220px) scale(0.50);
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    &.hover {
+        transform: translateZ(10px);
+    }
+}

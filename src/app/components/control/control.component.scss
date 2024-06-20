@@ -1,0 +1,27 @@
+@import '../../../scss/common';
+
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $color-light;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: $gap;
+    transition: 0.5s ease-in;
+    animation: appear 0.5s ease-in forwards;
+    &:active {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

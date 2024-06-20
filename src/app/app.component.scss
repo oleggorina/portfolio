@@ -1,0 +1,69 @@
+@import '../scss/common';
+
+.container {
+    padding: $gap;
+    width: 100%;
+    height: 100vh;
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-rows: 0.9fr 0.1fr;
+        grid-template-areas: "items content" "controls controls";
+        width: 100%;
+        height: 100%;
+        gap: $gap;
+        @include xl {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr 0.5fr;
+            grid-template-areas: "items" "controls" "content";
+        }
+        &__items {
+            grid-area: items;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            .wrapper {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+            &-indicators {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+        &__content {
+            grid-area: content;
+            width: 100%;
+            height: 100%;
+        }
+        &__controls {
+            grid-area: controls;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: $gap;
+        }
+    }
+}
+
+.spinner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    background: linear-gradient(to right, #414345, #232526);
+}
